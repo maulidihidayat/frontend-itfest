@@ -39,7 +39,7 @@ export function Footer() {
 
   const socialLinks = [
     {
-      icon: <FaGithub className="w-5 h-5 text-foreground" />,
+      icon: <FaGithub className="w-5 h-5" />,
       href: "https://github.com/ifalfahri/imphnen-lp",
       label: "GitHub",
     },
@@ -61,16 +61,18 @@ export function Footer() {
   ];
 
   return (
-    <footer className="w-full md:min-h-screen  border-t border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+    <footer className="w-full border-t border-gray-200 bg-white dark:border-gray-700 dark:bg-gradient-to-b dark:from-[#0f172a] dark:to-[#1e293b] transition-colors duration-500">
       <div className="container mx-auto px-4 py-12 md:px-10">
         <div className="flex flex-col items-start justify-between gap-12 space-y-8 md:flex-row md:space-y-0">
           {/* Logo and Tagline */}
           <div className="flex flex-col space-y-4">
             <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold">RINGKASAN.AI</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white">
+                MINDSSLIDE.AI
+              </span>
             </Link>
-            <p className="text-xs md:text-sm text-neutral-600 dark:text-neutral-400">
-              Santai aja, udah kami ringkasin kok.
+            <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300">
+              Slide keren tanpa ribet, langsung dari dokumenmu.
             </p>
             <div className="flex space-x-4 mt-4">
               {socialLinks.map((social, idx) => (
@@ -78,7 +80,7 @@ export function Footer() {
                   key={`social-${idx}`}
                   href={social.href}
                   aria-label={social.label}
-                  className="text-neutral-600 hover:rotate-10 hover:scale-125 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
+                  className="text-gray-600 hover:rotate-10 hover:scale-125 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all duration-200"
                 >
                   {social.icon}
                 </Link>
@@ -88,11 +90,8 @@ export function Footer() {
 
           {/* Footer Links */}
           {footerLinks.map((section, idx) => (
-            <div
-              key={`footer-section-${idx}`}
-              className="flex flex-col space-y-4"
-            >
-              <h3 className="font-semibold text-black dark:text-white">
+            <div key={`footer-section-${idx}`} className="flex flex-col space-y-4">
+              <h3 className="font-semibold text-gray-900 dark:text-white">
                 {section.title}
               </h3>
               <ul className="flex flex-col space-y-2">
@@ -100,7 +99,7 @@ export function Footer() {
                   <li key={`footer-link-${idx}-${linkIdx}`}>
                     <Link
                       href={link.href}
-                      className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
+                      className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -112,26 +111,25 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-10 flex flex-col items-center justify-between border-t border-neutral-200 pt-6 dark:border-neutral-800 md:flex-row">
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            &copy; {currentYear} RINGKASAN.AI . Made by{" "}
+        <div className="mt-10 flex flex-col items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-700 md:flex-row">
+          <p className="text-sm text-gray-600 dark:text-gray-300">
+            &copy; {currentYear} MINDSSLIDE.AI Made by{" "}
             <Link
-              className="hover:text-primary transition-colors"
+              className="text-blue-600 dark:text-blue-400 hover:underline"
               href="https://ifal.me"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Anti BurnOut Team
             </Link>
             . All rights reserved.
           </p>
-          <div className="mt-4 flex space-x-4 md:mt-0">
-            <ConfettiButton>Bergabung dengan Kami</ConfettiButton>
-          </div>
         </div>
 
-        {/* Full Width IMPHNEN Text */}
-        <div className="mx-auto h-full w-full overflow-hidden">
-          <h1 className="absolute left-0 text-[14.7vw] font-extrabold tracking-tighter text-foreground/5">
-            RINGKASAN.AI
+        {/* Full Width Watermark */}
+        <div className="mx-auto h-full w-full overflow-hidden relative">
+          <h1 className="absolute left-0 bottom-0 text-[14.7vw] font-extrabold tracking-tighter text-gray-200 dark:text-white/5 select-none pointer-events-none">
+            MINDSSLIDE.AI
           </h1>
         </div>
       </div>
