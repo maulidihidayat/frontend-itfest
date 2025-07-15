@@ -5,21 +5,21 @@ import { BrainCircuit, Rocket, ShieldCheck } from "lucide-react";
 const aboutCards = [
   {
     icon: BrainCircuit,
-    title: "Mengubah Informasi Menjadi Intisari",
+    title: "Visi Kami",
     content:
-      "Di era banjir informasi, Ringkasan.ai membantu Anda menangkap esensi tanpa harus menghabiskan waktu berjam-jam. Kami percaya, ringkasan yang akurat mempercepat belajar dan berpikir strategis.",
+      "MindSlide diciptakan untuk mempermudah siapa pun menyulap dokumen menjadi presentasi yang menarik dan profesional hanya dalam hitungan detik. Dengan teknologi AI, kami ingin mempercepat proses berpikir, merangkum ide, dan menyampaikannya dalam format visual yang powerful—tanpa repot.",
   },
   {
     icon: Rocket,
-    title: "Teknologi AI yang Bekerja untuk Anda",
+    title: "Cara Kerja",
     content:
-      "Unggah video, audio, atau teks—dan biarkan AI kami mengekstrak poin-poin penting. Dengan model bahasa canggih, hasil ringkasan kami tajam, relevan, dan langsung ke inti.",
+      "Cukup unggah file PDF, DOCX, atau TXT kamu—dan biarkan AI kami bekerja. MindSlide membaca, menganalisis, dan merangkum inti dari isi dokumen lalu mengubahnya menjadi slide PowerPoint otomatis. Cepat, akurat, dan bisa disesuaikan.",
   },
   {
     icon: ShieldCheck,
-    title: "Cepat, Cerdas, dan Bisa Diandalkan",
+    title: "Kenapa MindSlide?",
     content:
-      "Kami tak sekadar meringkas. Kami menyajikan pemahaman. Dirancang untuk pelajar, profesional, kreator, hingga peneliti. Aman, cepat, dan fokus pada hal-hal penting.",
+      "Hemat waktu bikin presentasi, didukung AI canggih untuk ekstraksi ide, dan output PowerPoint yang siap pakai. MindSlide hadir untuk pelajar, dosen, pekerja profesional, atau siapa saja yang ingin presentasi tanpa drama.",
   },
 ];
 

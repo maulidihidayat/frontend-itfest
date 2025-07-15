@@ -29,10 +29,9 @@ export default function PdfToPptxConverter() {
     let documentId = '';
 
     try {
-      // --- LANGKAH 1: UPLOAD DOKUMEN ---
       setProgressMessage('Uploading PDF...');
       const formData = new FormData();
-      formData.append('file', selectedFile); // Pastikan backend Anda mengharapkan key 'file'
+      formData.append('file', selectedFile);
 
       const uploadResponse = await fetch('http://localhost:8000/api/v1/document/upload', {
         method: 'POST',
@@ -44,17 +43,10 @@ export default function PdfToPptxConverter() {
         throw new Error(`Upload failed: ${errorData.message || uploadResponse.statusText}`);
       }
 
-      // Asumsi backend mengembalikan JSON seperti: { "document_id": "xyz-123" }
-      // Sesuaikan 'document_id' jika key-nya berbeda di backend Anda
       const uploadResult = await uploadResponse.json();
-      documentId = uploadResult.document_id; 
-      if (!documentId) {
-        throw new Error('Could not get document_id from upload response.');
-      }
-      console.log('Upload successful, Document ID:', documentId);
+      documentId = uploadResult.document_id;
+      if (!documentId) throw new Error('Could not get document_id from upload response.');
 
-
-      // --- LANGKAH 2: GENERATE PRESENTASI ---
       setProgressMessage('Generating presentation...');
       const generateResponse = await fetch(`http://localhost:8000/api/v1/document/${documentId}/generate-presentation`, {
         method: 'POST',
@@ -64,10 +56,7 @@ export default function PdfToPptxConverter() {
         const errorData = await generateResponse.json();
         throw new Error(`Generation failed: ${errorData.message || generateResponse.statusText}`);
       }
-      console.log('Generation request successful.');
 
-
-      // --- LANGKAH 3: DOWNLOAD PRESENTASI ---
       setProgressMessage('Downloading presentation...');
       const downloadResponse = await fetch(`http://localhost:8000/api/v1/document/download/presentation/${documentId}`);
 
@@ -79,10 +68,8 @@ export default function PdfToPptxConverter() {
       const contentDisposition = downloadResponse.headers.get('content-disposition');
       let filename = 'presentation.pptx';
       if (contentDisposition) {
-        const filenameMatch = contentDisposition.match(/filename="?(.+)"?/);
-        if (filenameMatch && filenameMatch.length > 1) {
-          filename = filenameMatch[1];
-        }
+        const match = contentDisposition.match(/filename="?(.+?)"?$/);
+        if (match && match[1]) filename = match[1];
       }
 
       const blob = await downloadResponse.blob();
@@ -94,10 +81,8 @@ export default function PdfToPptxConverter() {
       a.click();
       a.remove();
       window.URL.revokeObjectURL(downloadUrl);
-      
-      setSuccessMessage(`Success! Your download for "${filename}" has started.`);
-      console.log('Download started.');
 
+      setSuccessMessage(`Success! Your download for "${filename}" has started.`);
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -107,19 +92,20 @@ export default function PdfToPptxConverter() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gray-100">
-      <div className="w-full max-w-lg p-8 space-y-6 bg-white rounded-xl shadow-lg">
+    <main className="flex min-h-screen flex-col items-center justify-center p-6 sm:p-10 bg-gray-100 dark:bg-gray-900 transition-colors duration-500">
+      <div className="w-full max-w-lg p-8 space-y-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-gray-800">
+          <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
             PDF to PowerPoint Converter
           </h1>
-          <p className="mt-2 text-gray-500">
+          <p className="mt-2 text-gray-500 dark:text-gray-300">
             Follow the steps to get your presentation.
           </p>
         </div>
+
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="pdf-upload" className="block text-sm font-medium text-gray-700 sr-only">
+            <label htmlFor="pdf-upload" className="sr-only">
               Upload PDF
             </label>
             <input
@@ -127,9 +113,10 @@ export default function PdfToPptxConverter() {
               type="file"
               accept=".pdf"
               onChange={handleFileChange}
-              className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+              className="block w-full text-sm text-gray-500 dark:text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 dark:file:bg-blue-900 dark:file:text-blue-300 hover:file:bg-blue-100 dark:hover:file:bg-blue-800"
             />
           </div>
+
           <button
             type="submit"
             disabled={isLoading || !selectedFile}
@@ -140,13 +127,13 @@ export default function PdfToPptxConverter() {
         </form>
 
         {error && (
-          <div className="p-4 mt-4 text-sm text-red-700 bg-red-100 border border-red-400 rounded-lg">
+          <div className="p-4 mt-4 text-sm text-red-700 bg-red-100 border border-red-400 rounded-lg dark:bg-red-950 dark:text-red-300 dark:border-red-700">
             <p><span className="font-bold">Error:</span> {error}</p>
           </div>
         )}
 
         {successMessage && (
-          <div className="p-4 mt-4 text-sm text-green-700 bg-green-100 border border-green-400 rounded-lg">
+          <div className="p-4 mt-4 text-sm text-green-700 bg-green-100 border border-green-400 rounded-lg dark:bg-green-950 dark:text-green-300 dark:border-green-700">
             <p><span className="font-bold">Success:</span> {successMessage}</p>
           </div>
         )}
