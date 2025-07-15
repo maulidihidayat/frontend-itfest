@@ -3,7 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/Components/theme-provider";
 import { Nav } from "@/Components/Nav";
-import Footer from "@/Components/footer";
+import Footer from "@/Components/Footer";
+import AboutSection from '@/Components/AboutSection';
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -37,7 +38,9 @@ export default function RootLayout({
         >
           <Nav />
           <div className="h-screen">{children}</div>
-          <Footer />
+          <AboutSection/>
+           
+          <Footer/>
         </ThemeProvider>
       </body>
     </html>
