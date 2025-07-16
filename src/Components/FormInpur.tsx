@@ -115,7 +115,7 @@ export default function PdfToPptxConverter() {
             MINDSLIDE AI
           </h1>
           <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
-            PDF to PowerPoint Converter by AI
+            Convert Your Documents to PowerPoint Instantly with AI.
           </p>
         </div>
 
@@ -152,7 +152,7 @@ export default function PdfToPptxConverter() {
                   {selectedFile.name}
                 </span>
               ) : (
-                <span className="text-sm">Click or drag & drop PDF file here</span>
+                <span className="text-sm">Click or drag & drop Document file here</span>
               )}
             </div>
           </label>
@@ -166,7 +166,7 @@ export default function PdfToPptxConverter() {
               focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 
               transition duration-300"
           >
-            {isLoading ? progressMessage || "Processing..." : "Start Conversion"}
+            {isLoading ? progressMessage || "Processing..." : "Convert to PPTX"}
           </button>
         </form>
 

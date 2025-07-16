@@ -3,7 +3,6 @@ import { IconChevronDown } from "@tabler/icons-react";
 import { AnimatePresence, motion, useInView } from "motion/react";
 import React, { useRef, useState } from "react";
 import { BoxReveal } from "./ui/box-reveal";
-import { div } from "motion/react-client";
 
 interface FAQItemProps {
   question: string;
@@ -114,7 +113,7 @@ const faqItems = [
       "Mind Slide adalah platform berbasis AI yang membantu mengubah dokumen PDF menjadi file presentasi PowerPoint (PPTX) secara otomatis. Cocok untuk pelajar, dosen, profesional, atau siapa pun yang ingin menghemat waktu dalam membuat presentasi dari dokumen teks yang sudah ada.",
   },
   {
-    question: "Gimana cara join Himpunan ini?",
+    question: "Gimana cara menggunakan MINDSLIDE AI?",
     answer: (
       <div className="space-y-2">
         <p className="text-gray-600 dark:text-neutral-400">
@@ -132,11 +131,11 @@ const faqItems = [
     ),
   },
   {
-    question: "Apakah MINDSLIDE.AI gratis?",
+    question: "Apakah MINDSLIDE AI gratis?",
     answer: (
       <div className="space-y-2">
         <p className="text-gray-700 dark:text-gray-300 text-base">
-          Ya, <strong>Mind Slide bisa digunakan secara gratis!</strong>
+          Ya, <strong>MINDSLIDE bisa digunakan secara gratis!</strong>
         </p>
         <p className="text-gray-600 dark:text-gray-400">
           Tidak perlu login atau langganan—langsung pakai dan nikmati kemudahannya!
@@ -146,7 +145,7 @@ const faqItems = [
   },
   {
     question: "Format file apa saja yang didukung?",
-    answer: "Saat ini hanya PDF, tapi format lain seperti DOCX bisa didukung di masa mendatang.",
+    answer: "Saat ini hanya PDF, DOCX, TXT, tapi format lain akan dikembangkan dimasa depan.",
   },
   {
     question: "Apakah perlu koneksi internet untuk menggunakan Mind Slide?",
