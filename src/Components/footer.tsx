@@ -39,7 +39,7 @@ export function Footer() {
   const socialLinks = [
     {
       icon: <FaGithub className="w-5 h-5" />,
-      href: "https://github.com/ifalfahri/imphnen-lp",
+      href: "https://github.com/maulidihidayat/frontend-itfest",
       label: "GitHub",
     },
     {
@@ -54,7 +54,7 @@ export function Footer() {
     },
     {
       icon: <RiFacebookFill className="w-5 h-5 text-blue-600" />,
-      href: "https://facebook.com/groups/programmerhandal",
+      href: "https://facebook.com/",
       label: "Facebook",
     },
   ];
@@ -126,7 +126,7 @@ export function Footer() {
         {/* Full Width Watermark */}
         <div className="mx-auto h-full w-full overflow-hidden relative">
           <h1 className="absolute left-0 bottom-0 text-[14.7vw] font-extrabold tracking-tighter text-gray-200 dark:text-white/5 select-none pointer-events-none">
-            MINDSSLIDE.AI
+            MINDSSLIDE AI
           </h1>
         </div>
       </div>
