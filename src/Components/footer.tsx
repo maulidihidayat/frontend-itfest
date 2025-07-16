@@ -110,7 +110,7 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="mt-10 flex flex-col items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-700 md:flex-row">
           <p className="text-sm text-gray-600 dark:text-gray-300">
-            &copy; {currentYear} MINDSSLIDE.AI Made by{" "}
+            &copy; {currentYear} MINDSSLIDE AI Made by{" "}
             <Link
               className="text-sky-400 dark:text-blue-400 hover:underline"
               href="https://ifal.me"

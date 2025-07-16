@@ -3,7 +3,6 @@ import { IconChevronDown } from "@tabler/icons-react";
 import { AnimatePresence, motion, useInView } from "motion/react";
 import React, { useRef, useState } from "react";
 import { BoxReveal } from "./ui/box-reveal";
-import { div } from "motion/react-client";
 
 interface FAQItemProps {
   question: string;
@@ -132,11 +131,11 @@ const faqItems = [
     ),
   },
   {
-    question: "Apakah MINDSLIDE.AI gratis?",
+    question: "Apakah MINDSLIDE AI gratis?",
     answer: (
       <div className="space-y-2">
         <p className="text-gray-700 dark:text-gray-300 text-base">
-          Ya, <strong>Mind Slide bisa digunakan secara gratis!</strong>
+          Ya, <strong>MINDSLIDE bisa digunakan secara gratis!</strong>
         </p>
         <p className="text-gray-600 dark:text-gray-400">
           Tidak perlu login atau langganan—langsung pakai dan nikmati kemudahannya!
