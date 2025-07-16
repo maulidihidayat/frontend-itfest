@@ -2,8 +2,7 @@
 import Link from "next/link";
 import { FaDiscord, FaGithub, FaTwitter } from "react-icons/fa";
 import { RiFacebookFill } from "react-icons/ri";
-import { ConfettiButton } from "./ui/confetti-button";
-
+import Image from "next/image";
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -61,15 +60,13 @@ export function Footer() {
   ];
 
   return (
-    <footer className="w-full border-t border-gray-200 bg-white dark:border-gray-700 dark:bg-gradient-to-b dark:from-[#0f172a] dark:to-[#1e293b] transition-colors duration-500">
+    <footer className="w-full border-t border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900 transition-colors duration-500">
       <div className="container mx-auto px-4 py-12 md:px-10">
         <div className="flex flex-col items-start justify-between gap-12 space-y-8 md:flex-row md:space-y-0">
           {/* Logo and Tagline */}
           <div className="flex flex-col space-y-4">
             <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold text-gray-900 dark:text-white">
-                MINDSSLIDE.AI
-              </span>
+              <Image src="/mind.png" alt="logo" width={170} height={200} />
             </Link>
             <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300">
               Slide keren tanpa ribet, langsung dari dokumenmu.
@@ -115,7 +112,7 @@ export function Footer() {
           <p className="text-sm text-gray-600 dark:text-gray-300">
             &copy; {currentYear} MINDSSLIDE.AI Made by{" "}
             <Link
-              className="text-blue-600 dark:text-blue-400 hover:underline"
+              className="text-sky-400 dark:text-blue-400 hover:underline"
               href="https://ifal.me"
               target="_blank"
               rel="noopener noreferrer"

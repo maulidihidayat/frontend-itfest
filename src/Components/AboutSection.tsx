@@ -1,4 +1,5 @@
 // components/AboutSection.tsx
+"use client";
 import React from "react";
 import { BrainCircuit, Rocket, ShieldCheck } from "lucide-react";
 
@@ -27,27 +28,38 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="bg-gradient-to-b from-white to-gray-100 dark:from-[#0f172a] dark:to-[#1e293b] py-20 px-6 md:px-10 transition-colors duration-500"
+      className="w-full  bg-white dark:bg-[#0f172a] py-24 px-6 md:px-10 transition-colors duration-500 md:mt-10"
     >
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-14">
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl font-extrabold  text-sky-400 mb-4">
           Tentang Kami
         </h2>
+        <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-sm md:text-base mb-14">
+          Pelajari bagaimana MindSlide bekerja dan mengapa kamu akan menyukainya.
+        </p>
+
+        {/* Card Grid */}
         <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {aboutCards.map((card, index) => (
             <div
               key={index}
               className="group relative bg-white dark:bg-[#0f172a] p-8 rounded-3xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-gray-700 transition-all duration-300"
             >
-              <div className="absolute -top-5 left-5 w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                <card.icon size={24} className="text-indigo-600 dark:text-indigo-300" />
+              {/* Icon */}
+              <div className="absolute -top-6 left-6 w-14 h-14 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <card.icon size={26} className="text-indigo-600 dark:text-indigo-300" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-white mt-10 mb-4">
-                {card.title}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                {card.content}
-              </p>
+
+              {/* Title & Content */}
+              <div className="mt-10">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {card.content}
+                </p>
+              </div>
             </div>
           ))}
         </div>

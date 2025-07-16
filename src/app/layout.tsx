@@ -1,11 +1,9 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/Components/theme-provider";
-import { Nav } from "@/Components/Nav";
-import Footer from "@/Components/footer";
-import AboutSection from '@/Components/AboutSection';
-import { FAQSection } from "@/Components/Faq";
+
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -14,9 +12,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "IMPHNEN | Ingin Menjadi Programmer Handal Namun Enggan Ngoding",
+  title: "MINDSSLIDE.AI",
   description:
-    "Ingin Menjadi Programmer Handal Namun Enggan Ngoding adalah komunitas perkumpulan sepuh-sepuh yang pura-pura malas ngoding, padahal jago banget.",
+    "PDF to PowerPoint Converter by AI",
 };
 
 export default function RootLayout({
@@ -25,11 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${poppins.variable} antialiased`}
-    >
+    <html lang="en" className={`$poppins`}>
+      
       <body className="font-sans">
         <ThemeProvider
           attribute="class"
@@ -37,11 +32,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Nav />
-          <div className="h-screen">{children}</div>
-          <AboutSection/>
-           <FAQSection/>
-          <Footer/>
+          
+          <div className="min-h-screen">{children}</div>
         </ThemeProvider>
       </body>
     </html>

@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "@/lib/utils";
+import { cn } from "../../app/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import {
   AnimatePresence,
@@ -123,7 +123,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
 
     // If the href is an anchor link, use smooth scrolling
     if (href.startsWith("#")) {
-      import("@/lib/utils").then(({ scrollToElement }) => {
+      import("../../app/lib/utils").then(({ scrollToElement }) => {
         scrollToElement(href);
       });
     } else {
@@ -267,7 +267,7 @@ export const NavbarLogo = () => {
       onClick={handleLogoClick}
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <Image src="/hmps.png" alt="logo" width={40} height={40} />
+      <Image src="/mind.png" alt="logo" width={170} height={200} />
     </Link>
   );
 };

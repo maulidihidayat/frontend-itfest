@@ -2,7 +2,7 @@
  
  
 import React, { useRef, MouseEventHandler, ReactNode } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "../../app/lib/utils";
 import confetti from "canvas-confetti";
  
 interface ConfettiButtonProps

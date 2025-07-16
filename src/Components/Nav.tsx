@@ -25,14 +25,14 @@ import { ModeToggle } from "./ui/mode-toggle";
 export function Nav() {
   const navItems = [
     { name: "Beranda", link: "#home" },
-    { name: "Tentang Kami", link: "#features" },
-    { name: "FAQ", link: "#testimonial" },
+    { name: "Tentang Kami", link: "#about" },
+    { name: "FAQ", link: "#faq" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Scroll handler
+  
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -48,7 +48,7 @@ export function Nav() {
   ) => {
     e.preventDefault();
     if (href.startsWith("#")) {
-      import("@/lib/utils").then(({ scrollToElement }) => {
+      import("../app/lib/utils").then(({ scrollToElement }) => {
         scrollToElement(href);
         setIsMobileMenuOpen(false);
       });
