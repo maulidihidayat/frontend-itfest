@@ -266,7 +266,7 @@ export const NavbarLogo = () => {
       onClick={handleLogoClick}
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <Image src="/mind.png" alt="logo" width={170} height={200} />
+       <Image src="/mind.png" alt="logo" width={170} height={200}/>
     </Link>
   );
 };
