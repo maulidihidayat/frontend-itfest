@@ -28,7 +28,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full  bg-white dark:bg-[#0f172a] py-24 px-6 md:px-10 transition-colors duration-500 md:mt-10"
+      className="w-full  bg-white dark:bg-[#0f172a] py-24 px-6 md:px-10 transition-colors duration-500 "
     >
       <div className="max-w-6xl mx-auto text-center">
         {/* Heading */}
