@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, FormEvent, DragEvent } from "react";
 import { UploadCloud, FileCheck2, FileWarning } from "lucide-react";
 
