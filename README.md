@@ -32,5 +32,5 @@
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-username/mindslide-ai.git
+git clone https://github.com/maulidihidayat/frontend-itfest.git
 cd mindslide-ai
