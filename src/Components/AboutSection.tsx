@@ -47,8 +47,8 @@ export default function AboutSection() {
               className="group relative bg-white dark:bg-[#0f172a] p-8 rounded-3xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-gray-700 transition-all duration-300"
             >
               {/* Icon */}
-              <div className="absolute -top-6 left-6 w-14 h-14 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                <card.icon size={26} className="text-indigo-600 dark:text-indigo-300" />
+              <div className="absolute -top-6 left-6 w-14 h-14 bg-sky-100 dark:bg-sky-900 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <card.icon size={26} className="text-sky-500 dark:text-sky-300" />
               </div>
 
               {/* Title & Content */}
