@@ -50,7 +50,7 @@ export default function PdfToPptxConverter() {
       formData.append("file", selectedFile);
 
       const uploadResponse = await fetch(
-        "http://localhost:8000/api/v1/document/upload",
+        "https://itfestapp-new.livelymeadow-0ebf6ae4.westus2.azurecontainerapps.io/api/v1/document/upload",
         {
           method: "POST",
           body: formData,
@@ -68,7 +68,7 @@ export default function PdfToPptxConverter() {
 
       setProgressMessage("Generating presentation...");
       const generateResponse = await fetch(
-        `http://localhost:8000/api/v1/document/${documentId}/generate-presentation`,
+        `https://itfestapp-new.livelymeadow-0ebf6ae4.westus2.azurecontainerapps.io/api/v1/document/${documentId}/generate-presentation`,
         { method: "POST" }
       );
 
@@ -79,7 +79,7 @@ export default function PdfToPptxConverter() {
 
       setProgressMessage("Downloading presentation...");
       const downloadResponse = await fetch(
-        `http://localhost:8000/api/v1/document/download/presentation/${documentId}`
+        `https://itfestapp-new.livelymeadow-0ebf6ae4.westus2.azurecontainerapps.io/api/v1/document/download/presentation/${documentId}`
       );
 
       if (!downloadResponse.ok) {
