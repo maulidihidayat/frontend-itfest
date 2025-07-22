@@ -1,3 +1,6 @@
+## Repositori Backend
+Backend untuk proyek ini dapat ditemukan di: [https://github.com/wahyuazizi/noburnout-itfest-be](https://github.com/wahyuazizi/noburnout-itfest-be)
+
 # 🧠 Mindslide AI
 
 **Mindslide AI** adalah sebuah aplikasi cerdas yang memudahkan Anda dalam menyusun presentasi. Cukup unggah dokumen Anda (PDF, DOCX, atau TXT), dan biarkan AI kami merangkum konten penting dan mengubahnya secara otomatis menjadi file PowerPoint (.pptx) yang rapi, informatif, dan siap digunakan.
